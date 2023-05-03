@@ -77,8 +77,8 @@ class Config(object):
         parser.add_argument('-mem_fusion',default='early', type=str, help='early/late')
         parser.add_argument('-mem_feat_selection',default='manual', type=str, help='manual/automated')
         parser.add_argument('-mem_feat_lambda',default=None, type=str, help='selection lambda')
-        parser.add_argument('-calc_mAP', action = 'store_true')
-        parser.add_argument('-pseudo_mem_compute', action='store_true')
+        ####parser.add_argument('-calc_mAP', action = 'store_true')
+        #####parser.add_argument('-pseudo_mem_compute', action='store_true')
         parser.add_argument('-pseudo_thresh', default=7, type=int, help='pseudo label threshold')
 
         # uncertainty arguments

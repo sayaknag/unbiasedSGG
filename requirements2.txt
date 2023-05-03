@@ -1,0 +1,14 @@
+python=3.6
+pytorch=1.1
+scipy=1.1.0
+cython
+dill
+easydict
+h5py
+opencv
+pandas
+tqdm
+pycocotools
+torchmetrics
+yaml
+

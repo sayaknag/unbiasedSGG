@@ -6,7 +6,7 @@ import datetime
 import time
 from dataloader.action_genome import AG, cuda_collate_fn
 
-from lib.pseudo_memory_compute import pseudo_memory_computation
+####from lib.pseudo_memory_compute import pseudo_memory_computation
 from lib.config import Config
 from lib.evaluation_recall import BasicSceneGraphEvaluator
 from lib.object_detector import detector
@@ -55,11 +55,11 @@ else:
 
 ckpt = torch.load(conf.model_path, map_location=gpu_device)
 model.load_state_dict(ckpt['state_dict'], strict=True)
-if conf.pseudo_mem_compute:
-    rel_memory = pseudo_memory_computation(AG_dataset,dataloader,model,object_detector,gpu_device,conf)
-# if 'object_memory' or 'rel_memory' in ckpt.keys():
-#     model.object_classifier.obj_memory = ckpt['object_memory'].to(gpu_device)
-#     model.rel_memory = {k:ckpt['rel_memory'][k].to(gpu_device) for k in ckpt['rel_memory'].keys()}
+#####if conf.pseudo_mem_compute:
+    #####rel_memory = pseudo_memory_computation(AG_dataset,dataloader,model,object_detector,gpu_device,conf)
+#### if 'object_memory' or 'rel_memory' in ckpt.keys():
+#  #####   model.object_classifier.obj_memory = ckpt['object_memory'].to(gpu_device)
+#  ####   model.rel_memory = {k:ckpt['rel_memory'][k].to(gpu_device) for k in ckpt['rel_memory'].keys()}
 print('*'*50)
 print('CKPT {} is loaded'.format(conf.model_path))
 #
@@ -72,7 +72,6 @@ evaluator1 = BasicSceneGraphEvaluator(
     AG_contacting_predicates=AG_dataset.contacting_relationships,
     output_dir = conf.save_path,
     iou_threshold=0.5,
-    calc_mAP = conf.calc_mAP,
     constraint='with')
 
 evaluator2 = BasicSceneGraphEvaluator(
@@ -84,7 +83,6 @@ evaluator2 = BasicSceneGraphEvaluator(
     AG_contacting_predicates=AG_dataset.contacting_relationships,
     output_dir = conf.save_path,
     iou_threshold=0.5,
-    calc_mAP = conf.calc_mAP,
     constraint='semi', semithreshold=0.9)
 
 evaluator3 = BasicSceneGraphEvaluator(
@@ -96,7 +94,6 @@ evaluator3 = BasicSceneGraphEvaluator(
     AG_contacting_predicates=AG_dataset.contacting_relationships,
     output_dir = conf.save_path,
     iou_threshold=0.5,
-    calc_mAP = conf.calc_mAP,
     constraint='no')
 
 start_time = time.time()

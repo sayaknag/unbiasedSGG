@@ -1,6 +1,4 @@
-addict==2.4.0
-# Editable Git install with no remote (ai-lab-kubernetes==0.1.0)
--e /venv/src/ai-lab-kubernetes
+addict==2.4.0s
 argon2-cffi==21.3.0
 argon2-cffi-bindings==21.2.0
 asttokens==2.0.5
