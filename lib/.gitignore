@@ -1,2 +1,4 @@
+__pychache__/
+pseudo_memory_compute.py
 *.ipynb_checkpoints/
 *.ipynb
