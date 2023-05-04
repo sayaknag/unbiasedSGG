@@ -1,4 +1,6 @@
-__pychache__/
+__pychache__
 pseudo_memory_compute.py
+infoNCE.py
+*.gitignore
 *.ipynb_checkpoints/
 *.ipynb
