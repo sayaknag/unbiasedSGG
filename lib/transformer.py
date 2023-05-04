@@ -175,7 +175,7 @@ class transformer(nn.Module):
             return self.selector(feat).sigmoid()
 
     def forward(self, features, im_idx, memory = []):
-        print(len(memory))
+        
         rel_idx = torch.arange(im_idx.shape[0])
 
         l = torch.sum(im_idx == torch.mode(im_idx)[0])  # the highest box number in the single frame

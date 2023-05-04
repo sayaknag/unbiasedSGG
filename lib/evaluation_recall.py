@@ -5,11 +5,10 @@ import pickle
 from functools import reduce
 from lib.ults.pytorch_misc import intersect_2d, argsort_desc
 from lib.fpn.box_intersections_cpu.bbox import bbox_overlaps
-from torchmetrics.detection.mean_ap import MeanAveragePrecision
 
 class BasicSceneGraphEvaluator:
     def __init__(self, mode, AG_object_classes, AG_all_predicates, AG_attention_predicates, AG_spatial_predicates, AG_contacting_predicates,
-                 iou_threshold=0.5, calc_mAP = False, constraint=False, semithreshold=None, output_dir=None):
+                 iou_threshold=0.5,  constraint=False, semithreshold=None, output_dir=None):
         self.result_dict = {}
         self.mode = mode
         self.result_dict[self.mode + '_recall'] = {10: [], 20: [], 50: [], 100: []}
@@ -73,15 +72,7 @@ class BasicSceneGraphEvaluator:
                           self.mode+'_'+
                           self.constraint+'_constraint_per_cls_recall_at_{}.pkl'.format(k),'wb') as f:
                     pickle.dump(per_class_recall,f)
-        if self.constraint == 'no' and self.calc_mAP:
-            metric = MeanAveragePrecision(iou_thresholds=[0.5])
-            metric.update(self.pred_obj_list, self.gt_obj_list)
-            map_values = metric.compute()
-            print(map_values)
-            if log_file:
-                log_file.write('-'*15)
-                for k,v in map_values.items():
-                    log_file.write('{}: {}'.format(k,v.item()) + ' \n')
+        
         
 
     def evaluate_scene_graph(self, gt, pred):

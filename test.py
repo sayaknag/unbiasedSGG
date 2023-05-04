@@ -55,11 +55,7 @@ else:
 
 ckpt = torch.load(conf.model_path, map_location=gpu_device)
 model.load_state_dict(ckpt['state_dict'], strict=True)
-#####if conf.pseudo_mem_compute:
-    #####rel_memory = pseudo_memory_computation(AG_dataset,dataloader,model,object_detector,gpu_device,conf)
-#### if 'object_memory' or 'rel_memory' in ckpt.keys():
-#  #####   model.object_classifier.obj_memory = ckpt['object_memory'].to(gpu_device)
-#  ####   model.rel_memory = {k:ckpt['rel_memory'][k].to(gpu_device) for k in ckpt['rel_memory'].keys()}
+
 print('*'*50)
 print('CKPT {} is loaded'.format(conf.model_path))
 #
