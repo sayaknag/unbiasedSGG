@@ -7,7 +7,7 @@ The task of dynamic scene graph generation (SGG) from videos is complicated and 
 ![GitHub Logo](/data/framework.png)
 
 ## Requirements
-Please install packages in the requirements.txt file.
+Please install packages in the ```environment.yml``` file.
 
 ## Usage
 
