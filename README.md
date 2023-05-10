@@ -58,18 +58,18 @@ python train.py -mode sgdet -datasize large -data_path $DATAPATH -rel_mem_comput
 
 + For PREDCLS: 
 ```
-python test.py -mode predcls -datasize large -data_path $DATAPATH -model_path $MODELPATH -rel_mem_compute joint -rel_mem_weight_type simple -mem_fusion late -mem_feat_selection manual  -mem_feat_lambda 0.5  -rel_head gmm -obj_head linear -K 6 -lr 1e-5  
+python test.py -mode predcls -datasize large -data_path $DATAPATH -model_path $MODELPATH -rel_mem_compute joint -rel_mem_weight_type simple -mem_fusion late -mem_feat_selection manual  -mem_feat_lambda 0.5  -rel_head gmm -obj_head linear -K 6   
 
 ```
 
 + For SGCLS: 
 ```
-python test.py -mode sgcls -datasize large -data_path $DATAPATH -model_path $MODELPATH -rel_mem_compute joint -rel_mem_weight_type simple -mem_fusion late -mem_feat_selection manual  -mem_feat_lambda 0.3  -rel_head gmm -obj_head linear -obj_con_loss euc_con  -lambda_con 1  -eos_coef 1 -K 4 -tracking -lr 1e-5 
+python test.py -mode sgcls -datasize large -data_path $DATAPATH -model_path $MODELPATH -rel_mem_compute joint -rel_mem_weight_type simple -mem_fusion late -mem_feat_selection manual  -mem_feat_lambda 0.3  -rel_head gmm -obj_head linear -K 4 -tracking  
 
 ```
 + For SGDET: 
 ```
-python test.py -mode sgdet -datasize large -data_path $DATAPATH -model_path $MODELPATH -rel_mem_compute joint -rel_mem_weight_type simple -mem_fusion late -mem_feat_selection manual  -mem_feat_lambda 0.5  -rel_head gmm -obj_head linear -obj_con_loss euc_con  -lambda_con 1  -eos_coef 1 -K 4 -tracking -lr 1e-5 
+python test.py -mode sgdet -datasize large -data_path $DATAPATH -model_path $MODELPATH -rel_mem_compute joint -rel_mem_weight_type simple -mem_fusion late -mem_feat_selection manual  -mem_feat_lambda 0.5  -rel_head gmm -obj_head linear -K 4 -tracking 
 
 ```
 
