@@ -105,4 +105,4 @@ dependencies:
     - yacs==0.1.8
     - yapf==0.32.0
     - zipp==3.15.0
-prefix: /home/eegrad/snag/anaconda3/envs/TEMPURA2
+
