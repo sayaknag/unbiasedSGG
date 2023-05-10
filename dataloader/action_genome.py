@@ -171,9 +171,13 @@ class AG(Dataset):
             print('{} frames have no human bbox in GT'.format(self.non_gt_human_nums))
             print('Removed {} of them without joint heatmaps which means FasterRCNN also cannot find the human'.format(non_heatmap_nums))
         print('x' * 60)
-        # self.video_list = self.video_list[:10]
-        # self.video_size = self.video_size[:10]
-        # self.gt_annotations = self.gt_annotations[:10]
+
+        ## for a mini dataset debugging
+
+        # self.video_list = self.video_list[:50]
+        # self.video_size = self.video_size[:50]
+        # self.gt_annotations = self.gt_annotations[:50]
+        
     def __getitem__(self, index):
 
         frame_names = self.video_list[index]

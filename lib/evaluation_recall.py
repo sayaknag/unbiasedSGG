@@ -24,7 +24,6 @@ class BasicSceneGraphEvaluator:
         self.output_dir = output_dir
         # print(AG_object_classes)
         self.tot_all_predicates = len(AG_all_predicates)
-        self.calc_mAP = calc_mAP
         self.gt_obj_list = []
         self.pred_obj_list = []
 
