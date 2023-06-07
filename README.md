@@ -78,3 +78,16 @@ We would like to acknowledge the authors of the following repositories from wher
 + [Yang's repository](https://github.com/jwyang/faster-rcnn.pytorch)
 + [Zellers' repository](https://github.com/rowanz/neural-motifs) 
 + [Cong's repository](https://github.com/yrcong/STTran.git)
+
+## Citation
+If our work is helpful for your research, please cite our publication:
+```
+@inproceedings{nag2023unbiased,
+  title={Unbiased Scene Graph Generation in Videos},
+  author={Nag, Sayak and Min, Kyle and Tripathi, Subarna and Roy-Chowdhury, Amit K},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={22803--22813},
+  year={2023}
+}
+```
+
