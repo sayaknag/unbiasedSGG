@@ -180,6 +180,7 @@ class transformer(nn.Module):
 
         l = torch.sum(im_idx == torch.mode(im_idx)[0])  # the highest box number in the single frame
         b = int(im_idx[-1] + 1)
+        print(l,b)
         rel_input = torch.zeros([l, b, features.shape[1]]).to(features.device)
         # masks = torch.zeros([b, l], dtype=torch.uint8).to(features.device)
         masks = torch.zeros([b, l], dtype=torch.bool).to(features.device)
@@ -187,11 +188,12 @@ class transformer(nn.Module):
         for i in range(b):
             rel_input[:torch.sum(im_idx == i), i, :] = features[im_idx == i]
             masks[i, torch.sum(im_idx == i):] = 1
-
+        print(rel_input.shape)
         # spatial encoder
         local_output, local_attention_weights = self.local_attention(rel_input, masks)
+        print(local_output.shape)
         local_output = (local_output.permute(1, 0, 2)).contiguous().view(-1, features.shape[1])[masks.view(-1) == 0]
-
+        print(local_output.shape,masks.shape)
         
         if self.mem_compute and self.mem_fusion == 'early':
             mem_encoder_features = self.memory_hallucinator(memory=memory, feat=local_output)
@@ -200,6 +202,7 @@ class transformer(nn.Module):
             
 
         global_input = torch.zeros([l * 2, b - 1, features.shape[1]]).to(features.device)
+        print(global_input.shape)
         position_embed = torch.zeros([l * 2, b - 1, features.shape[1]]).to(features.device)
         idx = -torch.ones([l * 2, b - 1]).to(features.device)
         idx_plus = -torch.ones([l * 2, b - 1], dtype=torch.long).to(features.device) #TODO
@@ -212,8 +215,10 @@ class transformer(nn.Module):
 
             position_embed[:torch.sum(im_idx == j), j, :] = self.position_embedding.weight[0]
             position_embed[torch.sum(im_idx == j):torch.sum(im_idx == j)+torch.sum(im_idx == j+1), j, :] = self.position_embedding.weight[1]
-
+        print(global_input.shape)
         global_masks = (torch.sum(global_input.view(-1, features.shape[1]),dim=1) == 0).view(l * 2, b - 1).permute(1, 0)
+        print(global_masks.shape)
+        exit()
         # temporal decoder
         global_output, global_attention_weights = self.global_attention(global_input, global_masks, position_embed)
 #         print(global_output.shape)

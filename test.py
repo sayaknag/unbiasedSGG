@@ -103,7 +103,7 @@ with torch.no_grad():
         num_boxes = copy.deepcopy(data[3].cuda(0))
         gt_annotation = AG_dataset.gt_annotations[data[4]]
         video_id = AG_dataset.valid_video_names[data[4]]
-        
+        print(im_data.shape)
         entry = object_detector(im_data, im_info, gt_boxes, num_boxes, gt_annotation, im_all=None)
 
         if conf.tracking:

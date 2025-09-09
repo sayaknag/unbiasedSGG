@@ -242,31 +242,8 @@ class ObjectClassifier(nn.Module):
             pos_embed = self.pos_embed(center_size(entry['boxes'][:, 1:]))
             obj_features = torch.cat((entry['features'], obj_embed, pos_embed), 1)
             if phase == 'train':
-                # obj_features = self.intermediate(obj_features)
-                # entry['object_features'] = obj_features
-                # if self.mem_compute:
-                #     obj_features = self.memory_hallucinator(memory=self.obj_memory, feat=obj_features)
-                # entry['object_mem_features'] = obj_features
-                # if self.obj_head == 'gmm':
-                #     if not unc:
-                #         entry['distribution'] = self.decoder_lin(obj_features,phase=phase,unc=unc)
-                #     else:
-                #         entry['distribution'] = self.decoder_lin(obj_features,phase='test',unc=False)
-                #         entry['obj_al_uc'],entry['obj_ep_uc'] = self.decoder_lin(obj_features,unc=unc)
-                # else:
-                #     entry['distribution'] = self.decoder_lin(obj_features)
-                # entry['pred_labels'] = entry['labels']
                 entry = self.classify(entry,obj_features,phase,unc)
             else:
-                # obj_features = self.intermediate(obj_features)
-                # if self.mem_compute:
-                #     obj_features = self.memory_hallucinator(memory=self.obj_memory, feat=obj_features)
-                # entry['object_mem_features'] = obj_features
-                # if self.obj_head == 'gmm':
-                #     entry['distribution'] = self.decoder_lin(obj_features,phase=phase,unc=unc)
-                # else:
-                #     entry['distribution'] = self.decoder_lin(obj_features)
-                #     entry['distribution'] = torch.softmax(entry['distribution'][:, 1:],dim=1)
                 entry = self.classify(entry,obj_features,phase,unc)
 
                 box_idx = entry['boxes'][:,0].long()
@@ -335,36 +312,8 @@ class ObjectClassifier(nn.Module):
             if phase == 'train':
                 entry = self.classify(entry,obj_features,phase,unc)
 
-                # box_idx = entry['boxes'][:, 0][entry['pair_idx'].unique()]
-                # l = torch.sum(box_idx == torch.mode(box_idx)[0])
-                # b = int(box_idx[-1] + 1)  # !!!
-
-                # obj_features = self.intermediate(obj_features)
-                # entry['object_features'] = obj_features
-                # if self.mem_compute:
-                #     obj_features = self.memory_hallucinator(memory=self.obj_memory, feat=obj_features)
-                # entry['object_mem_features'] = obj_features
-                # if self.obj_head == 'gmm':
-                #     if not unc:
-                #         entry['distribution'] = self.decoder_lin(obj_features,phase=phase,unc=unc)
-                #     else:
-                #         entry['distribution'] = self.decoder_lin(obj_features,phase='test',unc=False)
-                #         entry['obj_al_uc'],entry['obj_ep_uc'] = self.decoder_lin(obj_features,unc=unc)
-                # else:
-                #     entry['distribution'] = self.decoder_lin(obj_features)
-                # entry['pred_labels'] = entry['labels']
             else:
                 entry = self.classify(entry,obj_features,phase,unc)
-                # if self.mem_compute:
-                #     obj_features = self.memory_hallucinator(memory=self.obj_memory, feat=obj_features)
-                # entry['object_mem_features'] = obj_features
-                # if self.obj_head == 'gmm':
-                #     obj_features = self.intermediate(obj_features)
-                #     entry['distribution'] = self.decoder_lin(obj_features,phase=phase,unc=unc)[:, 1:]
-                # else:
-                #     obj_features = self.intermediate(obj_features)
-                #     entry['distribution'] = self.decoder_lin(obj_features)
-                #     entry['distribution'] = torch.softmax(entry['distribution'][:, 1:], dim=1)
 
                 box_idx = entry['boxes'][:, 0].long()
                 b = int(box_idx[-1] + 1)
