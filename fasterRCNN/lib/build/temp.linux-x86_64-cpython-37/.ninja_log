@@ -1,0 +1,13 @@
+# ninja log v5
+3	65255	1692677455127892000	/home/eegrad/snag/Desktop/unbiasedSGG-master/fasterRCNN/lib/build/temp.linux-x86_64-cpython-37/home/eegrad/snag/Desktop/unbiasedSGG-master/fasterRCNN/lib/model/csrc/cuda/nms.o	74d82beb1b63d1e6
+2	66092	1692677455964197000	/home/eegrad/snag/Desktop/unbiasedSGG-master/fasterRCNN/lib/build/temp.linux-x86_64-cpython-37/home/eegrad/snag/Desktop/unbiasedSGG-master/fasterRCNN/lib/model/csrc/cuda/ROIPool_cuda.o	6b3198df7ec3fcf5
+1	66332	1692677456207677000	/home/eegrad/snag/Desktop/unbiasedSGG-master/fasterRCNN/lib/build/temp.linux-x86_64-cpython-37/home/eegrad/snag/Desktop/unbiasedSGG-master/fasterRCNN/lib/model/csrc/cuda/ROIAlign_cuda.o	9f6078b5a64289e7
+1	78226	1692677468086927000	/home/eegrad/snag/Desktop/unbiasedSGG-master/fasterRCNN/lib/build/temp.linux-x86_64-cpython-37/home/eegrad/snag/Desktop/unbiasedSGG-master/fasterRCNN/lib/model/csrc/cpu/ROIAlign_cpu.o	5d68c44357322c1f
+1	80819	1692677470679445000	/home/eegrad/snag/Desktop/unbiasedSGG-master/fasterRCNN/lib/build/temp.linux-x86_64-cpython-37/home/eegrad/snag/Desktop/unbiasedSGG-master/fasterRCNN/lib/model/csrc/cpu/nms_cpu.o	e72c0b1940b48aea
+5	84488	1692677474325104000	/home/eegrad/snag/Desktop/unbiasedSGG-master/fasterRCNN/lib/build/temp.linux-x86_64-cpython-37/home/eegrad/snag/Desktop/unbiasedSGG-master/fasterRCNN/lib/model/csrc/vision.o	3d15520ddf033eb
+54	64512	1692677541572432000	/home/eegrad/snag/Desktop/unbiasedSGG-master/fasterRCNN/lib/build/temp.linux-x86_64-cpython-37/home/eegrad/snag/Desktop/unbiasedSGG-master/fasterRCNN/lib/model/csrc/cuda/nms.o	4aa21c631e6888ed
+50	65633	1692677542698889000	/home/eegrad/snag/Desktop/unbiasedSGG-master/fasterRCNN/lib/build/temp.linux-x86_64-cpython-37/home/eegrad/snag/Desktop/unbiasedSGG-master/fasterRCNN/lib/model/csrc/cuda/ROIPool_cuda.o	9558e27bafb9e5fd
+47	65970	1692677543035108000	/home/eegrad/snag/Desktop/unbiasedSGG-master/fasterRCNN/lib/build/temp.linux-x86_64-cpython-37/home/eegrad/snag/Desktop/unbiasedSGG-master/fasterRCNN/lib/model/csrc/cuda/ROIAlign_cuda.o	9d711a91761abde3
+46	79109	1692677556149038000	/home/eegrad/snag/Desktop/unbiasedSGG-master/fasterRCNN/lib/build/temp.linux-x86_64-cpython-37/home/eegrad/snag/Desktop/unbiasedSGG-master/fasterRCNN/lib/model/csrc/cpu/ROIAlign_cpu.o	89305beb8d19cc5e
+46	79580	1692677556621977000	/home/eegrad/snag/Desktop/unbiasedSGG-master/fasterRCNN/lib/build/temp.linux-x86_64-cpython-37/home/eegrad/snag/Desktop/unbiasedSGG-master/fasterRCNN/lib/model/csrc/cpu/nms_cpu.o	3ec3c915065e686a
+60	82982	1692677560016372000	/home/eegrad/snag/Desktop/unbiasedSGG-master/fasterRCNN/lib/build/temp.linux-x86_64-cpython-37/home/eegrad/snag/Desktop/unbiasedSGG-master/fasterRCNN/lib/model/csrc/vision.o	d107dc92e6cb729d
