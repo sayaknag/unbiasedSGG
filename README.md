@@ -1,5 +1,6 @@
-# Unbiased Scene Graph generation in Videos
-Pytorch Implementation of the framework **TEMPURA** proposed in our paper [Unbiased Scene Graph Generation in Videos](https://arxiv.org/abs/2304.00733) accepted by **CVPR2023**.
+# Unbiased Scene Graph Generation in Videos 
+
+Official Pytorch Implementation of the framework **TEMPURA** proposed in our paper [**Unbiased Scene Graph Generation in Videos**](https://arxiv.org/abs/2304.00733) accepted by **CVPR2023**.
 
 ## Overview
 The inherent challenges in dynamic scene graph generation, such as long-tailed distribution of the visual relationships, noisy annotations and temporal fluctuation of model predictions, makes existing methods prone to generate biased scene graphs. We address this by introducing a new framework called **TEMPURA**: **TE**mporal consistency and **M**emory **P**rototype guided **U**nce**R**tainty **A**ttenuation for unbiased dynamic scene graph generation. TEMPURA employs object-level temporal consistencies via transformer-based sequence modeling, learns to synthesize unbiased relationship representations using memory-guided training, and tackles the inherent noise in the dataset by attenuating the predictive uncertainty of visual relations using a Gaussian Mixture Model (GMM).
